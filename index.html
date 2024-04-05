@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Selector</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="container">
+    <div class="variable-container">
+      <div class="variable-menu-item">
+        <span>Surface</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('pmsl')">MSL Pressure/Wind</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ttd')">Temp/Wind/Dwpt</p>
+          <p class="variable-dropdown-item" onclick="changeVar('thet')">MSL Pressure/Theta-E/Wind</p>
+          <p class="variable-dropdown-item" onclick="changeVar('thea')">Moisture Convergence</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mxth')">Mixing Ratio / Theta</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('icon')">Instantaneous Contraction Rate (sfc)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('trap')">Fluid Trapping (sfc)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('vtm')">Velocity Tensor Magnitude (sfc)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dvvr')">Divergence and Vorticity (sfc)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('def')">Deformation and Axes of Dilitation (sfc)</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('pchg')">2-hour Pressure Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('temp_chg')">3-hour Temp Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dwpt_chg')">3-hour Dwpt Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mixr_chg')">3-hour 100mb Mixing Ratio Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('thte_chg')">3-hour Theta-E Change</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Upper Air</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('925mb')">925mb Analysis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('850mb')">850mb Analysis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('850mb2')">850mb Analysis (version 2)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('700mb')">700mb Analysis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('500mb')">500mb Analysis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('300mb')">300mb Analysis</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('dlcp')">Deep Moist Convergence</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tadv_925')">925mb Temp Advection</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tadv')">850mb Temp Advection</p>
+          <p class="variable-dropdown-item" onclick="changeVar('7tad')">700mb Temp Advection</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sfnt')">Sfc Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('9fnt')">925mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('8fnt')">850mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('7fnt')">700mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('925f')">1000-925mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('98ft')">925-850mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('857f')">850-700mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('75ft')">700-500mb Frontogenesis</p>
+          <p class="variable-dropdown-item" onclick="changeVar('vadv')">700-400mb Diff. Vorticity Advection</p>
+          <p class="variable-dropdown-item" onclick="changeVar('padv')">400-250mb Pot. Vorticity Advection</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ddiv')">850-250mb Diff. Divergence</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ageo')">300mb Jet Circulation</p>
+          <p class="variable-dropdown-item" onclick="changeVar('500mb_chg')">12-hour 500mb Height Change</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('trap_500')">Fluid Trapping (500mb)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('trap_250')">Fluid Trapping (250mb)</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Thermodynamics</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('sbcp')">CAPE - Surface-Based</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mlcp')">CAPE - 100mb Mixed-Layer</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mucp')">CAPE - Most-Unstable / LPL Height</p>
+          <p class="variable-dropdown-item" onclick="changeVar('eltm')">EL Temp / MUCAPE / MUCIN</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ncap')">CAPE - Normalized</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dcape')">CAPE - Downdraft</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('muli')">Surface-based Lifted Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('laps')">Mid-Level Lapse Rates</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lllr')">Low-Level Lapse Rates</p>
+          <p class="variable-dropdown-item" onclick="changeVar('maxlr')">Max 2-6 km AGL Lapse Rate</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lclh')">LCL Height</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lfch')">LFC Height</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lfrh')">LCL-LFC Mean RH</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('sbcp_chg')">3-hour Surface-Based CAPE Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sbcn_chg')">3-hour Surface-Based CIN Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mlcp_chg')">3-hour 100mb Mixed-Layer CAPE Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mucp_chg')">3-hour Most-Unstable CAPE Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lllr_chg')">3-hour Low-Level LR Change</p>
+          <p class="variable-dropdown-item" onclick="changeVar('laps_chg')">6-hour Mid-Level LR Change</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Wind Shear</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('eshr')">Bulk Shear - Effective</p>
+          <p class="variable-dropdown-item" onclick="changeVar('shr6')">Bulk Shear - Sfc-6km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('shr8')">Bulk Shear - Sfc-8km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('shr3')">Bulk Shear - Sfc-3km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('shr1')">Bulk Shear - Sfc-1km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('brns')">BRN Shear</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('effh')">SR Helicity - Effective</p>
+          <p class="variable-dropdown-item" onclick="changeVar('srh3')">SR Helicity - Sfc-3km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('srh1')">SR Helicity - Sfc-1km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('srh5')">SR Helicity - Sfc-500m</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('llsr')">SR Wind - Sfc-2km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mlsr')">SR Wind - 4-6km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ulsr')">SR Wind - 9-11km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('alsr')">SR Wind - Anvil Level</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('mnwd')">850-300mb Mean Wind</p>
+          <p class="variable-dropdown-item" onclick="changeVar('xover')">850 and 500mb Winds</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('srh3_chg')">3hr Sfc-3km SR Helicity Change</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Composite Indices</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('scp')">Supercell Composite</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lscp')">Supercell Composite (left-moving)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('stor')">Sgfnt Tornado (fixed layer)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('stpc')">Sgfnt Tornado (effective layer)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('stpc5')">Sgfnt Tornado (using 0-500m SRH )</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sigt1')">Cond. Prob. Sigtor (Eqn 1)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sigt2')">Cond. Prob. Sigtor (Eqn 2)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('nstp')">Non-Supercell Tornado</p>
+          <p class="variable-dropdown-item" onclick="changeVar('vtp3')">Violent Tornado Parameter (VTP)</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('sigh')">Sgfnt Hail</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sars1')">SARS Hail Size</p>
+          <p class="variable-dropdown-item" onclick="changeVar('sars2')">SARS Sig. Hail Percentage</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lghl')">Large Hail Parameter</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dcp')">Derecho Composite</p>
+          <p class="variable-dropdown-item" onclick="changeVar('cbsig')">Craven/Brooks Sgfnt Severe</p>
+          <p class="variable-dropdown-item" onclick="changeVar('brn')">Bulk Richardson Number</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mcsm')">MCS Maintenance</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mbcp')">Microburst Composite </p>
+          <p class="variable-dropdown-item" onclick="changeVar('desp')">Enhanced Stretching Potential</p>
+          <hr>
+          <p class="variable-dropdown-item" onclick="changeVar('ehi1')">EHI - Sfc-1km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ehi3')">EHI - Sfc-3km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('vgp3')">VGP - Sfc-3km</p>
+          <p class="variable-dropdown-item" onclick="changeVar('crit')">Critical Angle</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Multi-Parameter Fields</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('mlcp_eshr')">100mb Mixed-Layer CAPE / Effective Bulk Shear</p>
+          <p class="variable-dropdown-item" onclick="changeVar('cpsh')">Most-Unstable CAPE / Effective Bulk Shear</p>
+          <p class="variable-dropdown-item" onclick="changeVar('comp')">Most-Unstable LI / 850 & 500mb Winds</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lcls')">LCL Height / Sfc-1km SR Helicity</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lr3c')">Sfc-3km Lapse Rate / Sfc-3km MLCAPE</p>
+          <p class="variable-dropdown-item" onclick="changeVar('3cape_shr3')">Bulk Shear - Sfc-3km / Sfc-3km MLCAPE</p>
+          <p class="variable-dropdown-item" onclick="changeVar('3cvr')">Sfc Vorticity / Sfc-3km MLCAPE</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tdlr')">Sfc Dwpt / 700-500mb Lapse Rates</p>
+          <p class="variable-dropdown-item" onclick="changeVar('hail')">Hail Parameters</p>
+          <p class="variable-dropdown-item" onclick="changeVar('qlcs1')">Lowest 3km max. Theta-e diff., MUCAPE, and 0-3km vector shear</p>
+          <p class="variable-dropdown-item" onclick="changeVar('qlcs2')">Lowest 3km max. Theta-e diff., MLCAPE, and 0-3km vector shear</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Heavy Rain</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('pwtr')">Precipitable Water</p>
+          <p class="variable-dropdown-item" onclick="changeVar('pwtr2')">Precipitable Water (w/ 850mb Moisture Transport Vector)</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tran')">850mb Moisture Transport</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tran_925')">925mb Moisture Transport</p>
+          <p class="variable-dropdown-item" onclick="changeVar('tran_925-850')">925-850mb Moisture Transport</p>
+          <p class="variable-dropdown-item" onclick="changeVar('prop')">Upwind Propagation Vector</p>
+          <p class="variable-dropdown-item" onclick="changeVar('peff')">Precipitation Potential Placement</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mixr')">100mb Mean Mixing Ratio</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Winter Weather</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('ptyp')">Precipitation Type</p>
+          <p class="variable-dropdown-item" onclick="changeVar('fztp')">Near-Freezing Surface Temp</p>
+          <p class="variable-dropdown-item" onclick="changeVar('swbt')">Surface Wet-Bulb Temp</p>
+          <p class="variable-dropdown-item" onclick="changeVar('fzlv')">Freezing Level</p>
+          <p class="variable-dropdown-item" onclick="changeVar('thck')">Critical Thicknesses</p>
+          <p class="variable-dropdown-item" onclick="changeVar('epvl')">800-750mb EPVg</p>
+          <p class="variable-dropdown-item" onclick="changeVar('epvm')">650-500mb EPVg</p>
+          <p class="variable-dropdown-item" onclick="changeVar('les1')">Lake Effect Snow 1</p>
+          <p class="variable-dropdown-item" onclick="changeVar('les2')">Lake Effect Snow 2</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dend')">Dendritic Growth Layer Depth</p>
+          <p class="variable-dropdown-item" onclick="changeVar('dendrh')">Dendritic Growth Layer RH</p>
+          <p class="variable-dropdown-item" onclick="changeVar('ddrh')">Dendritic Growth Layer Depth & RH</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mxwb')">Max Wet Bulb Temperature</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Fire Weather</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('sfir')">Sfc RH / Temp / Wind</p>
+          <p class="variable-dropdown-item" onclick="changeVar('fosb')">Fosberg Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lhan')">Low Altitude Haines Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('mhan')">Mid Altitude Haines Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('hhan')">High Altitude Haines Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lasi')">Lower Atmospheric Severity Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('lfrh2')">LCL-LFC Mean RH (fire wx version)</p>
+        </div>
+      </div>
+      <div class="variable-menu-item">
+        <span>Classic</span>
+        <div class="variable-dropdown-container">
+          <p class="variable-dropdown-item" onclick="changeVar('ttot')">Total Totals</p>
+          <p class="variable-dropdown-item" onclick="changeVar('kidx')">K-Index</p>
+          <p class="variable-dropdown-item" onclick="changeVar('show')">Showalter Index</p>
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img id="displayedImage" src="" alt="Displayed Image">
+    </div>
+    <div class="controls">
+      <div class="controls-item">
+        <label for="year">Year:</label>
+        <select id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+      <div class="controls-item">
+        <label for="month">Month:</label>
+        <select id="month">
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+      <div class="controls-item">
+        <label for="day">Day:</label>
+        <select id="day">
+          <!-- Days will be populated dynamically based on the selected month -->
+        </select>
+      </div>
+      <div class="controls-item">
+        <label for="hour">Hour:</label>
+        <select id="hour">
+          <option value="00">0</option>
+          <option value="01">1</option>
+          <option value="02">2</option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+        </select>
+      </div>
+      <div class="controls-item">
+        <label for="sector">Sector:</label>
+        <select id="sector">
+          <option value="s19">CONUS</option>
+          <option value="s17">East Central</option>
+          <option value="s21">Great Lakes</option>
+          <option value="s22">Intermountain West</option>
+          <option value="s20">Midwest</option>
+          <option value="s16">Northeast</option>
+          <option value="s13">North Central</option>
+          <option value="s11">Northwest</option>
+          <option value="s15">South</option>
+          <option value="s14">South Central</option>
+          <option value="s18">Southeast</option>
+          <option value="s12">Southwest</option>
+        </select>
+      </div>
+
+      <!-- <label for="variable">Variable:</label>
+      <select id="variable">
+        <option value="variable1">Variable 1</option>
+        <option value="variable2">Variable 2</option>
+        <option value="variable3">Variable 3</option>
+      </select> -->
+      <div class="controls-item">
+        <button id="prevHour">Previous Hour</button>
+        <button id="nextHour">Next Hour</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
